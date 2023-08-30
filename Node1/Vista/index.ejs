@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+</head>
+<body>
+    <h1>Clientes</h1>
+    <form action="/crud_clientes" method="post">
+        <label for="txt_id">ID:</label>
+        <input type="text" id="txt_id" name="txt_id" placeholder="0">
+        <!-- Otros campos de entrada... -->
+        <button type="submit" name="btn_crear" value="crear">Crear</button>
+        <button type="submit" name="btn_actualizar" value="actualizar">Actualizar</button>
+        <button type="submit" name="btn_borrar" value="borrar">Borrar</button>
+    </form>
+    
+    <table class="table" border="1px">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NIT</th>
+                <!-- Otros encabezados de columna... -->
+            </tr>
+        </thead>
+        <tbody>
+            <% resultado.forEach((cliente) => { %>
+                <tr>
+                    <td><%= cliente.id_Clientes %></td>
+                    <td><%= cliente.Nit %></td>
+                    <!-- Otros datos de columna... -->
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+    
+</body>
+</html>
